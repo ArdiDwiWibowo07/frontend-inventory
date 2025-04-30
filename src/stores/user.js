@@ -18,17 +18,21 @@ export const useUser = defineStore('user', {
     actions: {
         //action "login"
         async login(credentials) {
+            console.log(credentials);
+            
             //fetch API
             await Api.post('/api/login', credentials)
             .then((response) => {
+                console.log(response.data.user);
+                
 
                 //set state
-                this.user = response.data.data.user
-                this.token = response.data.data.token
+                this.user = response.data.user
+                this.token = response.data.token
 
                 //set cookies untuk menyimpan token dan data user
-                Cookies.set('token', response.data.data.token)
-                Cookies.set('user', JSON.stringify(response.data.data.user))
+                Cookies.set('token', response.data.token)
+                Cookies.set('user', JSON.stringify(response.data.user))
 
             })
         },

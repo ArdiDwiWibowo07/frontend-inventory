@@ -14,6 +14,46 @@ const routes = [
         name: 'login',
         component: () => import( /* webpackChunkName: "home" */ '../views/auth/login.vue')
     },
+    {
+        path: '/dashboard',
+        beforeEnter: (to, from, next) => {
+            useUser().getToken ? next() : next('/')
+        },
+        name: 'dashboard',
+        component: () => import( /* webpackChunkName: "home" */ '../views/dashboard/index.vue'),
+    },
+    {
+        path: '/categories',
+        beforeEnter: (to, from, next) => {
+            useUser().getToken ? next() : next('/')
+        },
+        name: 'categories',
+        component: () => import( /* webpackChunkName: "home" */ '../views/categories/index.vue'),
+    },
+    {
+        path: '/products',
+        beforeEnter: (to, from, next) => {
+            useUser().getToken ? next() : next('/')
+        },
+        name: 'products',
+        component: () => import( /* webpackChunkName: "home" */ '../views/products/index.vue'),
+    },
+    {
+        path: '/suppliers',
+        beforeEnter: (to, from, next) => {
+            useUser().getToken ? next() : next('/')
+        },
+        name: 'products',
+        component: () => import( /* webpackChunkName: "home" */ '../views/suppliers/index.vue'),
+    },
+    {
+        path: '/stocks',
+        beforeEnter: (to, from, next) => {
+            useUser().getToken ? next() : next('/')
+        },
+        name: 'stocks',
+        component: () => import( /* webpackChunkName: "home" */ '../views/stocks/index.vue'),
+    },
 
 ]
 
