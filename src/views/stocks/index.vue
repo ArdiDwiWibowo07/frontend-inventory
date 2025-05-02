@@ -118,8 +118,8 @@ const handleKeyDown = (e) => {
                                             </td>
                                             <td>
                                                 <div class="btn-list flex-nowrap">
-                                                    <StockButton type="in" :id="stock.stock.product_id" />
-                                                    <StockButton type="out" :id="stock.stock.product_id" />
+                                                    <StockButton type="in" :id="stock.stock.product_id" :fetchData="fetchData" />
+                                                    <StockButton type="out" :id="stock.stock.product_id" :fetchData="fetchData" />
                                                 </div>
                                             </td>
                                         </tr>

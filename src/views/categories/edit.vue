@@ -27,7 +27,6 @@ import { handleErrors } from "../../utils/handleErrors";
 // Reactive state
 const name = ref("");
 const image = ref("");
-const description = ref("");
 const errors = ref({});
 
 // Refs for file input and modal
